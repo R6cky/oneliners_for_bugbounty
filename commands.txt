@@ -1,1 +1,6 @@
 for subdomain in $(cat pathYourSubdomains/subdomainsvalidated.txt); do ffuf -u "$subdomain" -w WordlistsPath/fuzz_wordlist.txt -o ffuf.json
+
+
+Enumeration subdomains with subfinder using API keys, DNS validate with puredns, validate subdomains with requests using HTTPX tool. 
+
+subfinder -d boozt.com -silent | puredns resolve -r resolvers.txt --silent | httpx -title -tech-detect -status-code -follow-redirects -logger -o httpx_results.txt
